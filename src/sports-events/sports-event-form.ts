@@ -24,4 +24,6 @@ export interface ValidatedSportsEventDetails {
 
 export interface SportsEvent extends ValidatedSportsEventDetails {
   id: string;
+  participants: string[];
+  availablePlaces: number;
 }
