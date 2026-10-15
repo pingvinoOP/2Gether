@@ -34,8 +34,6 @@ describe('CreateSportsEventService', () => {
       startAt: '2026-10-16T18:30:00.000Z',
       capacity: 10,
       organizerId: 'user-1',
-      participants: [],
-      availablePlaces: 10,
     });
     expect(repository.findById(result.event.id)).toEqual(result.event);
   });

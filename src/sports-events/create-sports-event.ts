@@ -26,8 +26,6 @@ export class CreateSportsEventService {
     const event: SportsEvent = {
       id: randomUUID(),
       ...validation.value,
-      participants: [],
-      availablePlaces: validation.value.capacity,
     };
     this.events.save(event);
     return { success: true, event };
