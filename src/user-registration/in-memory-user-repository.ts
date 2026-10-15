@@ -1,9 +1,6 @@
-export interface StoredUser {
-  id: string;
-  email: string;
-  passwordHash: string;
-  passwordSalt: string;
-}
+import type { UserAccount } from '../user-management/user-account.js';
+
+export type StoredUser = UserAccount;
 
 export interface UserRepository {
   findByEmail(email: string): StoredUser | undefined;

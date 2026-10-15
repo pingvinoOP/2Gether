@@ -29,11 +29,14 @@ export class UserRegistrationService {
 
     const passwordSalt = randomBytes(16).toString('hex');
     const passwordHash = scryptSync(password, passwordSalt, 64).toString('hex');
+    const now = new Date().toISOString();
     const user: StoredUser = {
       id: randomUUID(),
       email: normalizedEmail,
       passwordHash,
       passwordSalt,
+      createdAt: now,
+      updatedAt: now,
     };
 
     this.users.save(user);
