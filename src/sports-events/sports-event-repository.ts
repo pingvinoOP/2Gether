@@ -3,6 +3,7 @@ import type { SportsEvent } from './sports-event-form.js';
 export interface SportsEventRepository {
   save(event: SportsEvent): void;
   findById(id: string): SportsEvent | undefined;
+  list(): SportsEvent[];
 }
 
 export class InMemorySportsEventRepository implements SportsEventRepository {
