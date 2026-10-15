@@ -1,12 +1,8 @@
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { InMemorySessionStore, type UserSession } from './in-memory-session-store.js';
+import type { UserAccount } from '../user-management/user-account.js';
 
-export interface LoginCredential {
-  id: string;
-  email: string;
-  passwordHash: string;
-  passwordSalt: string;
-}
+export type LoginCredential = Pick<UserAccount, 'id' | 'email' | 'passwordHash' | 'passwordSalt'>;
 
 export interface LoginUserRepository {
   findByEmail(email: string): LoginCredential | undefined;
